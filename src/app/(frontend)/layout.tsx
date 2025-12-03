@@ -48,9 +48,43 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
 export const metadata: Metadata = {
   metadataBase: new URL(getServerSideURL()),
-  openGraph: mergeOpenGraph(),
+  title: {
+    default: 'Episolve LLC - Technology Solutions for Business Problems',
+    template: '%s | Episolve LLC',
+  },
+  description: 'Episolve LLC provides innovative technology solutions for complex business problems. Expert consulting, custom software development, and strategic technology guidance.',
+  keywords: ['technology solutions', 'business consulting', 'software development', 'IT consulting', 'Episolve'],
+  authors: [{ name: 'Episolve LLC' }],
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  openGraph: {
+    ...mergeOpenGraph(),
+    siteName: 'Episolve LLC',
+    title: 'Episolve LLC - Technology Solutions for Business Problems',
+    description: 'Innovative technology solutions for complex business problems',
+    images: [
+      {
+        url: '/branding/logos/episolve-logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Episolve LLC - Technology Solutions for Business Problems',
+      },
+    ],
+  },
   twitter: {
     card: 'summary_large_image',
-    creator: '@payloadcms',
+    site: '@episolve',
+    creator: '@episolve',
+    title: 'Episolve LLC - Technology Solutions for Business Problems',
+    description: 'Innovative technology solutions for complex business problems',
+    images: ['/branding/logos/episolve-logo.png'],
   },
 }

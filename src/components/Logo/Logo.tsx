@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import Image from 'next/image'
 import React from 'react'
 
 interface Props {
@@ -14,16 +15,27 @@ export const Logo = (props: Props) => {
   const priority = priorityFromProps || 'low'
 
   return (
-    /* eslint-disable @next/next/no-img-element */
-    <img
-      alt="Payload Logo"
-      width={193}
-      height={34}
-      loading={loading}
-      fetchPriority={priority}
-      decoding="async"
-      className={clsx('max-w-[9.375rem] w-full h-[34px]', className)}
-      src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/ui/src/assets/payload-logo-light.svg"
-    />
+    <>
+      {/* Desktop logo - horizontal layout */}
+      <Image
+        alt="Episolve LLC - Technology Solutions for Business Problems"
+        src="/branding/logos/episolve-logo-horizontal.png"
+        width={300}
+        height={80}
+        loading={loading}
+        priority={priority === 'high'}
+        className={clsx('hidden md:block h-auto w-auto max-h-[50px]', className)}
+      />
+      {/* Mobile logo - square layout */}
+      <Image
+        alt="Episolve LLC"
+        src="/branding/logos/episolve-logo-square.png"
+        width={120}
+        height={120}
+        loading={loading}
+        priority={priority === 'high'}
+        className={clsx('md:hidden h-auto w-auto max-h-[45px]', className)}
+      />
+    </>
   )
 }

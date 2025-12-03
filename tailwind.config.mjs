@@ -56,6 +56,18 @@ const config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       colors: {
+        // Episolve Brand Colors
+        episolve: {
+          navy: '#254071',
+          'navy-dark': '#254071',
+          yellow: '#FDFC8C',
+          'yellow-bright': '#FDFC8C',
+          gold: '#F4E87C',
+          'blue-medium': '#4A74A8',
+          'blue-light': '#8FB4D9',
+          'blue-pale': '#E6EAEF',
+        },
+        // Theme colors (mapped to CSS variables)
         accent: {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
